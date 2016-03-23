@@ -8,9 +8,9 @@ import java.io.IOException;
 public class WebsiteAccessors {
 
 
-    public Document getWebsiteResponse(String url) {
+    public static Document getWebsiteResponse(String url) {
         try {
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).userAgent("Chrome").get();
             return doc;
         } catch (IOException e) {
             e.printStackTrace();
@@ -18,12 +18,8 @@ public class WebsiteAccessors {
         }
     }
 
-    public Elements getWebsiteUrls(Document doc) {
-        return doc.select("a[href]");
+    public static Elements getTableByName(Document html, String tableName) {
+        return html.select("table." + tableName);
     }
 
-
-    public Elements getWebsiteUrls(Elements elements) {
-        return elements.select("a[href]");
-    }
 }

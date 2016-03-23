@@ -3,5 +3,6 @@
 <properties>
     <entry key="base">http://www.footballdb.com/</entry>
     <entry key="playerExtension">/players/players.html?letter=%s&amp;page=%s</entry>
+    <entry key="playerListTable">statistics.scrollable</entry>
 </properties>
 
